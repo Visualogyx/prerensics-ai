@@ -37,7 +37,7 @@ function Header() {
           Methodology
         </a>
         <a href="#kyp" className="hover:text-[var(--color-text)] transition">
-          KYP
+          KYPit
         </a>
         <a
           href="https://vlx.ai"
@@ -237,7 +237,7 @@ function KYP() {
             Know Your Product
           </div>
           <h2 className="mt-3 text-3xl md:text-5xl font-semibold tracking-tight leading-tight max-w-3xl">
-            KYP is the engine behind Prerensics.
+            KYPit<span className="text-[var(--color-accent)]">™</span> is the engine behind Prerensics.
           </h2>
           <p className="mt-6 max-w-2xl text-lg text-[var(--color-text-secondary)] leading-relaxed">
             Just as KYC reshaped financial trust, <strong className="text-[var(--color-text)]">Know Your Product</strong>{" "}
