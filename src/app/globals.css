@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --color-bg: #06101f;
+  --color-bg-elevated: #0b1a30;
+  --color-bg-card: #0f223d;
+  --color-border: #1f3556;
+  --color-border-hover: #2c4d7d;
+  --color-text: #e8eef7;
+  --color-text-secondary: #9fb3ce;
+  --color-text-tertiary: #6b829e;
+  --color-navy: #0a2540;
+  --color-accent: #2dd4bf;
+  --color-accent-dim: #14b8a6;
+  --color-accent-glow: rgba(45, 212, 191, 0.22);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-navy);
+}
+
+.hero-gradient {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(45, 212, 191, 0.14), transparent 60%),
+    radial-gradient(ellipse 60% 40% at 85% 30%, rgba(56, 189, 248, 0.10), transparent 60%),
+    radial-gradient(ellipse 60% 40% at 15% 70%, rgba(45, 212, 191, 0.07), transparent 60%);
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(45, 212, 191, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(45, 212, 191, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 40%, transparent 80%);
+}
+
+.glow {
+  box-shadow: 0 0 40px rgba(45, 212, 191, 0.18), 0 0 80px rgba(45, 212, 191, 0.08);
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up { animation: fade-up 0.6s ease-out forwards; }
+.animate-fade-up-delay-1 { animation: fade-up 0.6s ease-out 0.1s forwards; opacity: 0; }
+.animate-fade-up-delay-2 { animation: fade-up 0.6s ease-out 0.2s forwards; opacity: 0; }
+.animate-fade-up-delay-3 { animation: fade-up 0.6s ease-out 0.3s forwards; opacity: 0; }
