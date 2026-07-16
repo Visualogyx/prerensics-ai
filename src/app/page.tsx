@@ -16,6 +16,7 @@ export default function Home() {
         <Shift />
         <Principles />
         <KYP />
+        <Consulting />
         <CTA />
         <Footer />
       </div>
@@ -258,6 +259,59 @@ function KYP() {
                 </div>
               ),
             )}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Consulting() {
+  return (
+    <section className="mx-auto max-w-6xl px-6 py-20 border-t border-[var(--color-border)] bg-[var(--color-bg-card)]/40">
+      <div className="grid gap-10 lg:grid-cols-[1.25fr_0.95fr] items-start">
+        <div>
+          <div className="text-xs font-mono uppercase tracking-widest text-[var(--color-accent)]">
+            Consulting Engagements
+          </div>
+          <h2 className="mt-3 text-3xl md:text-5xl font-semibold tracking-tight">
+            PRERENSICS™ helps organizations tailor inspection protocols and controls to meet evolving supply chain regulations.
+          </h2>
+          <p className="mt-6 text-[var(--color-text-secondary)] leading-relaxed text-lg">
+            Under the PRERENSICS™ mark, VLX provides consulting engagements that translate product identity, traceability,
+            and quality insights into practical inspection and compliance workflows.
+          </p>
+          <ul className="mt-8 grid gap-4 text-[var(--color-text-secondary)] text-sm leading-relaxed">
+            <li>
+              • Tailoring inspection protocols to support regulatory compliance and product authenticity across the supply chain.
+            </li>
+            <li>
+              • Advising on logistics, product identity, and quality control procedures that reduce risk and improve audit readiness.
+            </li>
+            <li>
+              • Designing processes that help clients capture reliable metadata and evidence of inspection, verification, and quality activities.
+            </li>
+          </ul>
+        </div>
+
+        <div className="rounded-3xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)]/80 p-8">
+          <div className="text-xs font-mono uppercase tracking-widest text-[var(--color-accent)]">
+            Inspection and Compliance Support
+          </div>
+          <p className="mt-4 text-[var(--color-text-secondary)] leading-relaxed text-sm">
+            PRERENSICS™ consulting engagements are focused on helping clients create and refine inspection protocols,
+            controls, and advisory processes that align with supply chain, logistics, product identity, and quality regulations.
+          </p>
+          <div className="mt-6 space-y-3 text-sm text-[var(--color-text)]">
+            <div className="rounded-2xl bg-[var(--color-bg-card)] p-4">
+              PRERENSICS™ consulting helps organizations translate product traceability into inspection workflows that are easier to manage and defend.
+            </div>
+            <div className="rounded-2xl bg-[var(--color-bg-card)] p-4">
+              The services described support the development of tailored inspection protocols, quality checks, and compliance documentation.
+            </div>
+            <div className="rounded-2xl bg-[var(--color-bg-card)] p-4">
+              VLX partners with clients to design advisory engagements that keep inspections aligned with regulatory expectations and emerging industry standards.
+            </div>
           </div>
         </div>
       </div>
