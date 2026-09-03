@@ -3,6 +3,9 @@ import Link from "next/link";
 const BLOG_URL =
   "https://vlx.ai/blog/prerensics-moving-from-containment-to-prevention/";
 
+// TODO: confirm the address that should receive Prerensics platform inquiries.
+const CONTACT_EMAIL = "info@vlx.ai";
+
 export default function Home() {
   return (
     <div className="relative overflow-hidden">
@@ -16,6 +19,7 @@ export default function Home() {
         <Shift />
         <Principles />
         <KYP />
+        <Platform />
         <Consulting />
         <CTA />
         <Footer />
@@ -39,6 +43,9 @@ function Header() {
         </a>
         <a href="#kyp" className="hover:text-[var(--color-text)] transition">
           KYPit
+        </a>
+        <a href="#platform" className="hover:text-[var(--color-text)] transition">
+          Platform
         </a>
         <a
           href="https://vlx.ai"
@@ -266,6 +273,132 @@ function KYP() {
   );
 }
 
+const CAPABILITIES: {
+  title: string;
+  body: string;
+  fullWidth?: boolean;
+}[] = [
+  {
+    title: "Multifactor authentication with KYPit™",
+    body:
+      "KYPit™ validates every inspection against five independent signals — image validation, user identity, domain analytics, activity analytics, and IP analytics. Authenticity is established by the relationships between those signals and their metadata, not by any one of them, so a substituted photo or a spoofed location fails against the rest. This is how Prerensics™ verifies data accuracy and detects fraudulent activity from tampering as it happens, instead of discovering it in an audit.",
+  },
+  {
+    title: "Inspections, validations, verifications, and field exams",
+    body:
+      "Prerensics™ is delivered through VLX software for inspections, validations, verifications, field exams, and supply chain operations. Inspectors capture photos, video, and voice notes with GPS tagging — on mobile, and offline where there is no signal. Data accuracy is verified at the point of capture, in the field, rather than reviewed after the fact.",
+  },
+  {
+    title: "Logic applied to your datasets",
+    body:
+      "Prerensics™ applies logic to product and supply chain process datasets to ascertain quality, origin, and product integrity. Templates carry conditional logic, scoring and flagging, calculated fields, and repeatable sections, so those criteria are evaluated against data as it is captured. Prerensics™ defines which conditions constitute risk; the VLX platform enforces them on every inspection, every time.",
+  },
+  {
+    title: "Multi-stage authenticity, combined into one report",
+    body:
+      "Each stage of a supply chain process produces its own authenticity dataset — the evidence captured there, and the KYPit™ validation results that corroborate it. Prerensics™ powers those multi-stage datasets and combines them into a single report, so authenticity is assessed across the whole process rather than one checkpoint at a time.",
+  },
+  {
+    title: "Reports about data captured throughout the supply chain",
+    body:
+      "The VLX report engine turns data captured across the supply chain — inspection results, flagged exceptions, validation signals, and quality findings — into reports in PDF, Excel, or Word, branded and delivered automatically on completion. One auditable document that can be issued to a buyer, an auditor, or a regulator.",
+    fullWidth: true,
+  },
+];
+
+const DELIVERY = [
+  "Enabled on VLX",
+  "Browser and mobile",
+  "Works offline",
+  "Subscription licensed",
+  "REST API and integrations",
+];
+
+function Platform() {
+  return (
+    <section
+      id="platform"
+      className="mx-auto max-w-6xl px-6 py-20 border-t border-[var(--color-border)]"
+    >
+      <div className="max-w-3xl">
+        <div className="text-xs font-mono uppercase tracking-widest text-[var(--color-accent)]">
+          Delivered as software
+        </div>
+        <h2 className="mt-3 text-3xl md:text-5xl font-semibold tracking-tight leading-tight">
+          Prerensics<span className="text-[var(--color-accent)]">™</span> is a
+          methodology. VLX is how you run it.
+        </h2>
+        <p className="mt-6 text-lg text-[var(--color-text-secondary)] leading-relaxed">
+          Prerensics™ is not a separate product. It is the methodology{" "}
+          <a
+            href="https://vlx.ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[var(--color-text)] hover:text-[var(--color-accent)] transition"
+          >
+            VLX
+          </a>{" "}
+          (Visualogyx, Inc.) built its platform to enforce — and it is delivered
+          to customers as software, hosted and operated by VLX. Organizations
+          enable Prerensics™ on their VLX workspace, and the platform&apos;s
+          evidence capture, authentication, and reporting services are
+          configured to run to the Prerensics™ standard. Nothing to install;
+          licensed as a subscription.
+        </p>
+      </div>
+
+      <div className="mt-12 grid md:grid-cols-2 gap-6">
+        {CAPABILITIES.map((c, i) => (
+          <article
+            key={c.title}
+            className={`rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-card)]/50 p-7 hover:border-[var(--color-border-hover)] transition ${
+              c.fullWidth ? "md:col-span-2" : ""
+            }`}
+          >
+            <div className="text-2xl font-mono text-[var(--color-accent)]/70">
+              {String(i + 1).padStart(2, "0")}
+            </div>
+            <h3 className="mt-3 text-xl font-semibold tracking-tight">
+              {c.title}
+            </h3>
+            <p className="mt-3 text-sm text-[var(--color-text-secondary)] leading-relaxed">
+              {c.body}
+            </p>
+          </article>
+        ))}
+      </div>
+
+      <div className="mt-10 flex flex-wrap gap-3">
+        {DELIVERY.map((d) => (
+          <span
+            key={d}
+            className="inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-[var(--color-bg-elevated)]/60 px-4 py-2 text-xs text-[var(--color-text-secondary)]"
+          >
+            <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]" />
+            {d}
+          </span>
+        ))}
+      </div>
+
+      <div className="mt-10 flex flex-wrap items-center gap-4">
+        <a
+          href={`mailto:${CONTACT_EMAIL}?subject=Enable%20Prerensics%20on%20VLX`}
+          className="inline-flex items-center gap-2 rounded-full bg-[var(--color-accent)] px-6 py-3 text-sm font-semibold text-[var(--color-navy)] hover:bg-[var(--color-accent-dim)] transition glow"
+        >
+          Enable Prerensics™ on VLX
+          <span aria-hidden>→</span>
+        </a>
+        <a
+          href={`mailto:${CONTACT_EMAIL}?subject=Prerensics%20platform%20walkthrough`}
+          className="inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] px-6 py-3 text-sm font-semibold text-[var(--color-text)] hover:border-[var(--color-accent)] transition"
+        >
+          Book a walkthrough
+        </a>
+      </div>
+    </section>
+  );
+}
+
 function Consulting() {
   return (
     <section className="mx-auto max-w-6xl px-6 py-20 border-t border-[var(--color-border)] bg-[var(--color-bg-card)]/40">
@@ -371,7 +504,15 @@ function Footer() {
             </a>
           </span>
         </div>
-        <div>© {new Date().getFullYear()} Visualogyx, Inc.</div>
+        <div className="text-center md:text-right">
+          <div>
+            Prerensics™ software services are delivered on the VLX platform by
+            Visualogyx, Inc.
+          </div>
+          <div className="mt-1">
+            © {new Date().getFullYear()} Visualogyx, Inc.
+          </div>
+        </div>
       </div>
     </footer>
   );
